@@ -1,11 +1,19 @@
 package models;
 
+import jakarta.persistence.*;
+
+@Entity
 public class Avaliacao {
-    int id;
-    int perfil_id;
-    int video_id;
-    int nota;
-    String comentario;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
+    @Column(nullable = false)
+    private int perfil_id;
+    @Column(nullable = false)
+    private int video_id;
+    @Column(nullable = false)
+    private int nota;
+    private String comentario;
 
     public Avaliacao() {
     }

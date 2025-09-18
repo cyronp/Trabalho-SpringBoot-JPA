@@ -1,9 +1,17 @@
 package models;
 
+
+import jakarta.persistence.*;
+
+@Entity
 public class Perfil {
-    int id;
-    String nome_perfil;
-    int usuario_id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
+    @Column(length = 255,unique = true,nullable = false)
+    private String nome_perfil;
+    @Column(nullable = false)
+    private int usuario_id;
 
     public Perfil() {
     }

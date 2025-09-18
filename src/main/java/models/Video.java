@@ -1,11 +1,21 @@
 package models;
 
+
+import jakarta.persistence.*;
+
+@Entity
 public class Video {
-    int id;
-    String titulo;
-    String descricao;
-    int duracao;
-    int categoria_id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
+    @Column(length = 255,nullable = false,unique = true)
+    private String titulo;
+    @Column(length = 1000)
+    private String descricao;
+    @Column(nullable = false)
+    private int duracao;
+    @Column(nullable = false)
+    private int categoria_id;
 
     public Video() {
     }

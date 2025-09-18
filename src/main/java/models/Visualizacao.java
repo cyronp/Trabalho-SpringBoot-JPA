@@ -1,15 +1,22 @@
 package models;
 
-import sun.text.spi.JavaTimeDateTimePatternProvider;
+import jakarta.persistence.*;
 
 import java.util.Date;
-
+@Entity
 public class Visualizacao {
-    int id;
-    int perfil_id;
-    int video_id;
-    Date data_hora;
-    int progresso;
+    @Id
+    @GeneratedValue
+    private int id;
+    @Column(nullable = false)
+    private int perfil_id;
+    @Column(nullable = false)
+    private int video_id;
+    @Column(nullable = false)
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date data_hora;
+    @Column(nullable = false)
+    private int progresso;
 
     public Visualizacao() {
     }

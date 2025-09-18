@@ -1,8 +1,15 @@
 package models;
 
+import jakarta.persistence.*;
+
+@Entity
 public class Categoria {
-    int id;
-    String nome;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
+    @Column(length = 255,unique = true,nullable = false)
+    private String nome;
 
     public Categoria() {
     }
