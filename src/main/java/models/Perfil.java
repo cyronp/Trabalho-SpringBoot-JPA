@@ -13,6 +13,11 @@ public class Perfil {
     @Column(nullable = false)
     private int usuario_id;
 
+    @OneToOne
+    @JoinColumn(name = "usuario_id", nullable = false, insertable = false, updatable = false)
+    private Usuario usuario;
+
+
     public Perfil() {
     }
 

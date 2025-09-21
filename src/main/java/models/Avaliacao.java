@@ -15,6 +15,14 @@ public class Avaliacao {
     private int nota;
     private String comentario;
 
+    @ManyToOne
+    @JoinColumn(name = "video_id", nullable = false, insertable = false, updatable = false)
+    private Video video;
+
+    @OneToOne
+    @JoinColumn(name = "perfil_id", nullable = false, insertable = false, updatable = false)
+    private Perfil perfil;
+
     public Avaliacao() {
     }
 

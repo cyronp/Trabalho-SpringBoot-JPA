@@ -17,6 +17,11 @@ public class Video {
     @Column(nullable = false)
     private int categoria_id;
 
+    @ManyToOne
+    @JoinColumn(name = "categoria_id", nullable = false, insertable = false, updatable = false)
+    private Categoria categoria;
+
+
     public Video() {
     }
 

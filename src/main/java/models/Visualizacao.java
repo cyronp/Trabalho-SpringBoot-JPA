@@ -18,6 +18,14 @@ public class Visualizacao {
     @Column(nullable = false)
     private int progresso;
 
+    @ManyToOne
+    @JoinColumn(name = "video_id", nullable = false, insertable = false, updatable = false)
+    private Video video;
+
+    @ManyToOne
+    @JoinColumn(name = "perfil_id", nullable = false, insertable = false, updatable = false)
+    private Perfil perfil;
+
     public Visualizacao() {
     }
 
