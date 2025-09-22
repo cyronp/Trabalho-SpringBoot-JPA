@@ -1,4 +1,4 @@
-package models;
+package com.example.Trabalho_JPA.models;
 
 import jakarta.persistence.*;
 
@@ -8,21 +8,21 @@ import java.util.Date;
 public class Usuario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Long id;
     @Column(length = 255,nullable = false)
     private String nome;
     @Column(length = 255,unique = true, nullable = false)
     private String email;
     @Column(length = 255,nullable = false)
     private String senha;
-    @Column(length = 255,nullable = false)
+    @Column(nullable = false)
     @Temporal(TemporalType.DATE)
-    private Date data_cadastro;
+    private Date data_cadastro = new Date();
 
     public Usuario() {
     }
 
-    public Usuario(int id, String nome, String email, String senha, Date data_cadastro) {
+    public Usuario(Long id, String nome, String email, String senha, Date data_cadastro) {
         this.id = id;
         this.nome = nome;
         this.email = email;
@@ -30,11 +30,12 @@ public class Usuario {
         this.data_cadastro = data_cadastro;
     }
 
-    public int getId() {
+
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -68,6 +69,17 @@ public class Usuario {
 
     public void setData_cadastro(Date data_cadastro) {
         this.data_cadastro = data_cadastro;
+    }
+
+    @Override
+    public String toString() {
+        return "Usuario{" +
+                "id=" + id +
+                ", nome='" + nome + '\'' +
+                ", email='" + email + '\'' +
+                ", senha='" + senha + '\'' +
+                ", data_cadastro=" + data_cadastro +
+                '}';
     }
 }
 

@@ -1,4 +1,4 @@
-package models;
+package com.example.Trabalho_JPA.models;
 
 
 import jakarta.persistence.*;
@@ -7,7 +7,7 @@ import jakarta.persistence.*;
 public class Perfil {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Long id;
     @Column(length = 255,unique = true,nullable = false)
     private String nome_perfil;
     @Column(nullable = false)
@@ -21,18 +21,18 @@ public class Perfil {
     public Perfil() {
     }
 
-    public Perfil(int id, String nome_perfil, int usuario_id) {
+    public Perfil(Long id, String nome_perfil, int usuario_id) {
 
         this.id = id;
         this.nome_perfil = nome_perfil;
         this.usuario_id = usuario_id;
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

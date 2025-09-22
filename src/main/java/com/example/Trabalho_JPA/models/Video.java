@@ -1,4 +1,4 @@
-package models;
+package com.example.Trabalho_JPA.models;
 
 
 import jakarta.persistence.*;
@@ -7,7 +7,7 @@ import jakarta.persistence.*;
 public class Video {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Long id;
     @Column(length = 255,nullable = false,unique = true)
     private String titulo;
     @Column(length = 1000)
@@ -25,7 +25,7 @@ public class Video {
     public Video() {
     }
 
-    public Video(int id, String titulo, String descricao, int duracao, int categoria_id) {
+    public Video(Long id, String titulo, String descricao, int duracao, int categoria_id) {
         this.id = id;
         this.titulo = titulo;
         this.descricao = descricao;
@@ -33,11 +33,11 @@ public class Video {
         this.categoria_id = categoria_id;
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

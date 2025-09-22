@@ -1,11 +1,12 @@
-package models;
+package com.example.Trabalho_JPA.repositorys;
 
+import com.example.Trabalho_JPA.models.Avaliacao;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import java.util.List;
 
-public interface AvaliacaoRepository extends JpaRepository<Avaliacao,Integer> {
+public interface AvaliacaoRepository extends JpaRepository<Avaliacao,Long> {
     @Query("""
            SELECT v.id, v.titulo, AVG(a.nota) AS media
            FROM Avaliacao a
@@ -15,4 +16,3 @@ public interface AvaliacaoRepository extends JpaRepository<Avaliacao,Integer> {
            """)
     List<Object[]> findTopVideosByAvaliacao(Pageable pageable);
 }
-

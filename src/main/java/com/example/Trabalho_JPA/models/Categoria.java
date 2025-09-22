@@ -1,4 +1,4 @@
-package models;
+package com.example.Trabalho_JPA.models;
 
 import jakarta.persistence.*;
 
@@ -7,23 +7,23 @@ public class Categoria {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Long id;
     @Column(length = 255,unique = true,nullable = false)
     private String nome;
 
     public Categoria() {
     }
 
-    public Categoria(int id, String nome) {
+    public Categoria(Long id, String nome) {
         this.id = id;
         this.nome = nome;
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

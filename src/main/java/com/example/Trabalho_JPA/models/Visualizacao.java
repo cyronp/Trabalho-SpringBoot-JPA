@@ -1,44 +1,47 @@
-package models;
+package com.example.Trabalho_JPA.models;
 
 import jakarta.persistence.*;
 
+import java.util.Date;
 @Entity
-public class Avaliacao {
+public class Visualizacao {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    @GeneratedValue
+    private Long id;
     @Column(nullable = false)
     private int perfil_id;
     @Column(nullable = false)
     private int video_id;
     @Column(nullable = false)
-    private int nota;
-    private String comentario;
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date data_hora;
+    @Column(nullable = false)
+    private int progresso;
 
     @ManyToOne
     @JoinColumn(name = "video_id", nullable = false, insertable = false, updatable = false)
     private Video video;
 
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "perfil_id", nullable = false, insertable = false, updatable = false)
     private Perfil perfil;
 
-    public Avaliacao() {
+    public Visualizacao() {
     }
 
-    public Avaliacao(int id, int perfil_id, int video_id, int nota, String comentario) {
+    public Visualizacao(Long id, int perfil_id, int video_id, Date data_hora, int progresso) {
         this.id = id;
         this.perfil_id = perfil_id;
         this.video_id = video_id;
-        this.nota = nota;
-        this.comentario = comentario;
+        this.data_hora = data_hora;
+        this.progresso = progresso;
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -58,19 +61,19 @@ public class Avaliacao {
         this.video_id = video_id;
     }
 
-    public int getNota() {
-        return nota;
+    public Date getData_hora() {
+        return data_hora;
     }
 
-    public void setNota(int nota) {
-        this.nota = nota;
+    public void setData_hora(Date data_hora) {
+        this.data_hora = data_hora;
     }
 
-    public String getComentario() {
-        return comentario;
+    public int getProgresso() {
+        return progresso;
     }
 
-    public void setComentario(String comentario) {
-        this.comentario = comentario;
+    public void setProgresso(int progresso) {
+        this.progresso = progresso;
     }
 }

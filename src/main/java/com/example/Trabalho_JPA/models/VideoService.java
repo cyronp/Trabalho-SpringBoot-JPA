@@ -1,6 +1,7 @@
-package models;
+package com.example.Trabalho_JPA.models;
 
 import org.springframework.stereotype.Service;
+import com.example.Trabalho_JPA.repositorys.VideoRepository;
 
 import java.util.List;
 

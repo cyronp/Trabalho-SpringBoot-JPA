@@ -1,8 +1,9 @@
-package models;
+package com.example.Trabalho_JPA.models;
 
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
+import com.example.Trabalho_JPA.repositorys.VisualizacaoRepository;
 
 import java.util.List;
 
