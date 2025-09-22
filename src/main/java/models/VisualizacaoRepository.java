@@ -14,5 +14,15 @@ public interface VisualizacaoRepository extends JpaRepository<Visualizacao,Integ
            GROUP BY v.id, v.titulo
            ORDER BY totalVisualizacoes DESC
            """)
-    List<Object[]> findTop10ByOrderByTotalVisualizacoesDesc();
+    List<Object[]> findTop10TotalVisualizacoesDesc(Pageable pageable);
+
+    @Query("""
+            SELECT visu.perfil
+            FROM Visualizacao visu
+            GROUP BY visu.perfil
+            ORDER BY COUNT(visu) DESC
+           """)
+    List<Perfil> findTopPerfil(Pageable pageable);
+
 }
+
