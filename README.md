@@ -2,4 +2,4 @@
 
 ### Classe UML:
 
-![Classe_UML.png]([https://github.com/cyronp/Trabalho-SpringBoot-JPA/blob/main/Classe_UML.png])
+![Classe_UML.png](https://github.com/cyronp/Trabalho-SpringBoot-JPA/blob/main/Classe_UML.png)
