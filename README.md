@@ -1,5 +1,7 @@
 # Trabalho SpringBoot JPA Serviço de Video
 
+Sistema que simula uma aplicação de streaming
+
 ## Documentação 
 
 - Utilizamos SQLite como linguagem de banco de dados pela facil utilização e implementação.
