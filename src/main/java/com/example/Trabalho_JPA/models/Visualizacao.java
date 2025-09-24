@@ -9,9 +9,9 @@ public class Visualizacao {
     @GeneratedValue
     private Long id;
     @Column(nullable = false)
-    private int perfil_id;
+    private Long perfil_id;
     @Column(nullable = false)
-    private int video_id;
+    private Long video_id;
     @Column(nullable = false)
     @Temporal(TemporalType.TIMESTAMP)
     private Date data_hora;
@@ -29,7 +29,7 @@ public class Visualizacao {
     public Visualizacao() {
     }
 
-    public Visualizacao(Long id, int perfil_id, int video_id, Date data_hora, int progresso) {
+    public Visualizacao(Long id, Long perfil_id, Long video_id, Date data_hora, int progresso) {
         this.id = id;
         this.perfil_id = perfil_id;
         this.video_id = video_id;
@@ -45,19 +45,19 @@ public class Visualizacao {
         this.id = id;
     }
 
-    public int getPerfil_id() {
+    public Long getPerfil_id() {
         return perfil_id;
     }
 
-    public void setPerfil_id(int perfil_id) {
+    public void setPerfil_id(Long perfil_id) {
         this.perfil_id = perfil_id;
     }
 
-    public int getVideo_id() {
+    public Long getVideo_id() {
         return video_id;
     }
 
-    public void setVideo_id(int video_id) {
+    public void setVideo_id(Long video_id) {
         this.video_id = video_id;
     }
 

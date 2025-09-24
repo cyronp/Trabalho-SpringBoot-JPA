@@ -11,7 +11,7 @@ public class Perfil {
     @Column(length = 255,unique = true,nullable = false)
     private String nome_perfil;
     @Column(nullable = false)
-    private int usuario_id;
+    private Long usuario_id;
 
     @OneToOne
     @JoinColumn(name = "usuario_id", nullable = false, insertable = false, updatable = false)
@@ -21,7 +21,7 @@ public class Perfil {
     public Perfil() {
     }
 
-    public Perfil(Long id, String nome_perfil, int usuario_id) {
+    public Perfil(Long id, String nome_perfil, Long usuario_id) {
 
         this.id = id;
         this.nome_perfil = nome_perfil;
@@ -44,11 +44,11 @@ public class Perfil {
         this.nome_perfil = nome_perfil;
     }
 
-    public int getUsuario_id() {
+    public Long getUsuario_id() {
         return usuario_id;
     }
 
-    public void setUsuario_id(int usuario_id) {
+    public void setUsuario_id(Long usuario_id) {
         this.usuario_id = usuario_id;
     }
 }

@@ -8,9 +8,9 @@ public class Avaliacao {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @Column(nullable = false)
-    private int perfil_id;
+    private Long perfil_id;
     @Column(nullable = false)
-    private int video_id;
+    private Long video_id;
     @Column(nullable = false)
     private int nota;
     private String comentario;
@@ -26,7 +26,7 @@ public class Avaliacao {
     public Avaliacao() {
     }
 
-    public Avaliacao(Long id, int perfil_id, int video_id, int nota, String comentario) {
+    public Avaliacao(Long id, Long perfil_id, Long video_id, int nota, String comentario) {
         this.id = id;
         this.perfil_id = perfil_id;
         this.video_id = video_id;
@@ -42,19 +42,19 @@ public class Avaliacao {
         this.id = id;
     }
 
-    public int getPerfil_id() {
+    public Long getPerfil_id() {
         return perfil_id;
     }
 
-    public void setPerfil_id(int perfil_id) {
+    public void setPerfil_id(Long perfil_id) {
         this.perfil_id = perfil_id;
     }
 
-    public int getVideo_id() {
+    public Long getVideo_id() {
         return video_id;
     }
 
-    public void setVideo_id(int video_id) {
+    public void setVideo_id(Long video_id) {
         this.video_id = video_id;
     }
 

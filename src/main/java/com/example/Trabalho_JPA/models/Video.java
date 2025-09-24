@@ -15,7 +15,7 @@ public class Video {
     @Column(nullable = false)
     private int duracao;
     @Column(nullable = false)
-    private int categoria_id;
+    private Long categoria_id;
 
     @ManyToOne
     @JoinColumn(name = "categoria_id", nullable = false, insertable = false, updatable = false)
@@ -25,7 +25,7 @@ public class Video {
     public Video() {
     }
 
-    public Video(Long id, String titulo, String descricao, int duracao, int categoria_id) {
+    public Video(Long id, String titulo, String descricao, int duracao, Long categoria_id) {
         this.id = id;
         this.titulo = titulo;
         this.descricao = descricao;
@@ -65,11 +65,11 @@ public class Video {
         this.duracao = duracao;
     }
 
-    public int getCategoria_id() {
+    public Long getCategoria_id() {
         return categoria_id;
     }
 
-    public void setCategoria_id(int categoria_id) {
+    public void setCategoria_id(Long categoria_id) {
         this.categoria_id = categoria_id;
     }
 }
